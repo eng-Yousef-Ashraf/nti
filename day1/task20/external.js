@@ -1,0 +1,11 @@
+var n1=prompt('enter first number')
+var n2=prompt('enter second number')
+n1=+n1
+n2=Number(n2)
+console.log(n1+n2)
+console.log(n1-n2)
+console.log(n1*n2)
+console.log(n1/n2)
+console.log(n1%n2)
+console.log(n1**2)
+console.log(n2**2)

@@ -1,0 +1,5 @@
+var hotelName=prompt("enter hotel name")
+var days=prompt("enter number of days")
+var isConfrimed=prompt("is booking confirmed")
+alert("Hotel:"+hotelName+" Nights:"+days+" Confirmed:"+isConfrimed)
+console.log("Hotel:",hotelName," Nights:",days," Confirmed:",isConfrimed)
