@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTI Mini Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="store-container">
+        <header>
+            <h1>NTI Mini Store</h1>
+            <p>Product Management System</p>
+        </header>
+        <section class="menu-card">
+            <label for="menuSelect">Choose an operation</label>
+            <select id="menuSelect">
+                <option value="" selected disabled>Select an option</option>
+                <option value="1">1 - Add Product</option>
+                <option value="2">2 - Show All Products</option>
+                <option value="3">3 - Show Product By ID</option>
+                <option value="4">4 - Update Product</option>
+                <option value="5">5 - Delete Product</option>
+                <option value="6">6 - Search / Filter</option>
+                <option value="0">0 - Exit</option>
+            </select>
+        </section>
+        <section id="formSection" class="form-card hidden">
+            <h2 id="formTitle"></h2>
+            <div id="idGroup" class="input-group hidden">
+                <label for="productId">Product ID</label>
+                <input
+                    type="number"
+                    id="productId"
+                    placeholder="Enter product ID">
+            </div>
+            <div id="nameGroup" class="input-group hidden">
+                <label for="productName">Product Name</label>
+                <input
+                    type="text"
+                    id="productName"
+                    placeholder="Enter product name">
+            </div>
+            <div id="priceGroup" class="input-group hidden">
+                <label for="productPrice">Price</label>
+                <input
+                    type="number"
+                    id="productPrice"
+                    placeholder="Enter price">
+            </div>
+            <div id="categoryGroup" class="input-group hidden">
+                <label for="productCategory">Category</label>
+                <input
+                    type="text"
+                    id="productCategory"
+                    placeholder="Enter category">
+            </div>
+            <div id="quantityGroup" class="input-group hidden">
+                <label for="productQuantity">Quantity</label>
+                <input
+                    type="number"
+                    id="productQuantity"
+                    placeholder="Enter quantity">
+            </div>
+            <div id="searchGroup" class="input-group hidden">
+                <label for="searchInput">Search</label>
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search by name or category">
+            </div>
+            <div class="buttons">
+                <button id="actionButton" class="main-btn hidden">
+                    Submit
+                </button>
+                <button id="cancelButton" class="cancel-btn hidden">
+                    Cancel
+                </button>
+            </div>
+        </section>
+        <section id="resultSection" class="result-card hidden">
+            <h2>Result</h2>
+            <div id="result"></div>
+        </section>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>

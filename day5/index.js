@@ -14,7 +14,7 @@ function createProduct(name, price, category, quantity) {
     if (name == '') {
         return 'error'
     }
-    if(products.some(value=>value.name==name)){
+    if (products.some(value => value.name.trim().toLowerCase() == name.toLowerCase())) {
         return 'item already found'
     }
     if (price <= 0) {
@@ -69,7 +69,7 @@ function deleteProduct(id) {
 }
 function filterProducts(keyword) {
     keyword = keyword.trim().toLowerCase()
-    return  products.filter(function (value) {
+    return products.filter(function (value) {
         return value.name.toLowerCase().includes(keyword) ||
             value.category.toLowerCase().includes(keyword)
     })
@@ -89,87 +89,145 @@ function startApp() {
                 quantity = +quantity
                 console.log(createProduct(name, price, category, quantity))
             }
-            break
+                break
             case 2: getAllProducts()
-            break
-            case 3:{
-                var choosenID=prompt('enter id')
-                choosenID=+choosenID
+                break
+            case 3: {
+                var choosenID = prompt('enter id')
+                choosenID = +choosenID
                 console.log(getProductbyId(choosenID))
             }
-            break
-            case 4:{
-                var choosenID=prompt('enter id')
-                choosenID=+choosenID
+                break
+            case 4: {
+                var choosenID = prompt('enter id')
+                choosenID = +choosenID
                 var name = prompt('enter name')
                 var price = prompt('enter price')
                 price = +price
                 var category = prompt('enter category')
                 var quantity = prompt('enter quantity')
                 quantity = +quantity
-                console.log(updateProduct(choosenID,name,price,category,quantity))
+                console.log(updateProduct(choosenID, name, price, category, quantity))
             }
-            break
-            case 5:{
-                var choosenID=prompt('enter id')
-                choosenID=+choosenID
+                break
+            case 5: {
+                var choosenID = prompt('enter id')
+                choosenID = +choosenID
                 console.log(deleteProduct(choosenID))
             }
-            break
-            case 6:{
-                var key=prompt('enter keyword')
+                break
+            case 6: {
+                var key = prompt('enter keyword')
                 console.log(filterProducts(key))
             }
-            break
-            case 0:{
+                break
+            case 0: {
                 return
             }
-            default:console.log('invalid choice')
+            default: console.log('invalid choice')
         }
     }
 }
-function sortByPrice(order='asc'){
-    if(order=='asc'){
-      return  products.toSorted((a,b)=>a.price-b.price)
-    }else if(order='desc'){
-        return products.toSorted((a,b)=>b.price-a.price)
+function sortByPrice(order = 'asc') {
+    if (order == 'asc') {
+        return products.toSorted((a, b) => a.price - b.price)
+    } else if (order = 'desc') {
+        return products.toSorted((a, b) => b.price - a.price)
     }
 }
-function getStoreStats(){
-    var numberOfProducts=products.length
-   var inventoryValue= products.reduce((acc,value)=>acc+(value["price"]*value['quantity']),0)
-   var averagePrice=(products.reduce((acc,value)=>acc+value.price,0)/products.length).toFixed(2)
-   console.log('No.of products:',numberOfProducts,'inventory value:',inventoryValue,'average price',averagePrice)
-}
-function groupByCategory(){
- return products.reduce((acc,value)=>{
-    var keyValue=value.category
-    if(!acc[keyValue]){
-        acc[keyValue]=[]
-    }
-    acc[keyValue].push(value)
-    return acc
-    },{})
-}
-function filterByPriceRange(min=100,max=500){
-    return products.filter(value=>{
-        if(value.quantity==0){
-            return
-        }else{
-          if(value.price>min&&value.price<max){
-            return value
-          }
+function getStoreStats() {
+    var numberOfProducts = products.length
+    var inventoryValue = products.reduce(
+        (acc, value) => acc + value.price * value.quantity,
+        0
+    )
+    var averagePrice = (products.reduce((acc, value) => acc + value.price, 0)/ products.length).toFixed(2)
+    var outOfStock = products.reduce((acc, value) => {
+        if (value.quantity == 0) {
+            return acc + 1
         }
-    })
+        return acc
+    }, 0)
+
+    return {
+        numberOfProducts,
+        inventoryValue,
+        averagePrice,
+        outOfStock
+    }
+}
+function groupByCategory() {
+    return products.reduce((acc, value) => {
+        var keyValue = value.category
+        if (!acc[keyValue]) {
+            acc[keyValue] = []
+        }
+        acc[keyValue].push(value)
+        return acc
+    }, {})
+}
+function filterByPriceRange(min = 100, max = 500) {
+    return products.filter(value => value.quantity > 0 &&value.price >= min &&value.price <= max)
 }
 const inStock = (list) => {
     return list.filter(p => p.quantity > 0)
 }
- function withAfterAction(fn, callback){
+function withAfterAction(fn, callback) {
     fn()
     callback()
- }
+}
 withAfterAction(
-    ()=>console.log('hello'),
-    ()=>console.log('done')
+    () => console.log('hello'),
+    () => console.log('done')
 )
+var store = (function () {
+    function createProduct(name, price, category, quantity) {
+        name = name.trim()
+        category = category.trim()
+        if (name == '') {
+            return 'error'
+        }
+        if (products.some(value => value.name == name)) {
+            return 'item already found'
+        }
+        if (price <= 0) {
+            return 'error'
+        }
+        var newID = autoID()
+        products.push({
+            id: newID,
+            name,
+            price,
+            category,
+            quantity
+        })
+        return products
+    }
+    function deleteProduct(id) {
+        if (id == null) {
+            return null
+        }
+        var index = products.findIndex(value => value.id == id)
+        if (index == -1) {
+            return 'item not found'
+        }
+        if (confirm('Are you sure?')) {
+            products.splice(index, 1)
+        }
+        return products
+    }
+    function getProductById(id) {
+        if (id == null) {
+            return null
+        }
+        return products.find(value => value.id == id)
+    }
+    return {
+        createProduct: createProduct,
+        deleteProduct: deleteProduct,
+        getProductById: getProductById
+    }
+})()   //doesnt contain all functions but you get the idea
+function addMany(...items) {
+    return products.push(...items)
+}

@@ -1,0 +1,159 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient( 135deg, #0f172a,#1e293b  );
+    padding: 40px 20px;
+    color: #1e293b;
+}
+.store-container {
+    width: 100%;
+    max-width: 950px;
+    margin: auto;
+}
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+}
+header h1 {
+    font-size: 40px;
+    margin-bottom: 8px;
+}
+header p {
+    color: #cbd5e1;
+    font-size: 17px;
+}
+.menu-card,
+.form-card,
+.result-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+.menu-card label,
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+select,
+input {
+    width: 100%;
+    padding: 13px 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+select:focus,
+input:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+.form-card h2,
+.result-card h2 {
+    margin-bottom: 20px;
+}
+.input-group {
+    margin-bottom: 18px;
+}
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+button {
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.25s;
+}
+.main-btn {
+    background: #2563eb;
+    color: white;
+}
+.main-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+.delete-btn {
+    background: #dc2626;
+    color: white;
+}
+.delete-btn:hover {
+    background: #b91c1c;
+}
+.cancel-btn {
+    background: #e2e8f0;
+    color: #334155;
+}
+.cancel-btn:hover {
+    background: #cbd5e1;
+}
+.hidden {
+    display: none;
+}
+#result {
+    overflow-x: auto;
+}
+.message {
+    padding: 15px;
+    background: #f1f5f9;
+    border-radius: 8px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+th {
+    background: #0f172a;
+    color: white;
+}
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+tr:hover {
+    background: #f8fafc;
+}
+
+.out-stock {
+    color: #dc2626;
+    font-weight: bold;
+}
+.in-stock {
+    color: #16a34a;
+    font-weight: bold;
+}
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 30px;
+    }
+    .menu-card,
+    .form-card,
+    .result-card {
+        padding: 18px;
+    }
+    .buttons {
+        flex-direction: column;
+    }
+    button {
+        width: 100%;
+    }
+}
