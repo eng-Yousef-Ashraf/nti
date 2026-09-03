@@ -1,0 +1,258 @@
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 40px;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #222;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    color: #1f2937;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #374151;
+    font-size: 22px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+h2,
+form,
+#updateBtn,
+#deleteBtn,
+#loadBtn {
+    position: relative;
+}
+
+body > h2,
+body > form,
+body > input,
+body > button,
+body > #postsContainer {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    font-family: inherit;
+    transition: 0.2s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    border: none;
+    padding: 11px 18px;
+    border-radius: 8px;
+    background: #4f46e5;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #3730a3;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   UPDATE SECTION
+========================= */
+
+#updateId,
+#updateTitle,
+#updateBody {
+    max-width: 1000px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+#updateBtn {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   DELETE SECTION
+========================= */
+
+#deleteId {
+    max-width: 300px;
+    margin-right: 10px;
+}
+
+#deleteBtn {
+    background: #dc2626;
+    margin-bottom: 30px;
+}
+
+#deleteBtn:hover {
+    background: #b91c1c;
+}
+
+
+/* =========================
+   LOAD BUTTON
+========================= */
+
+#loadBtn {
+    display: block;
+    margin-bottom: 25px;
+    background: #059669;
+}
+
+#loadBtn:hover {
+    background: #047857;
+}
+
+
+/* =========================
+   POSTS
+========================= */
+
+#postsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+
+/* =========================
+   POST CARD
+========================= */
+
+#postsContainer > div {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    transition: 0.2s;
+}
+
+#postsContainer > div:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+#postsContainer h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #1f2937;
+    text-transform: capitalize;
+}
+
+#postsContainer p {
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+#postsContainer small {
+    color: #9ca3af;
+}
+
+#postsContainer hr {
+    display: none;
+}
+
+
+/* =========================
+   HORIZONTAL LINE
+========================= */
+
+hr {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 35px auto;
+    max-width: 1000px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    #deleteId {
+        width: 100%;
+        max-width: none;
+        margin-bottom: 10px;
+    }
+
+    #deleteBtn {
+        width: 100%;
+    }
+
+    #postsContainer {
+        grid-template-columns: 1fr;
+    }
+}
