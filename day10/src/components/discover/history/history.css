@@ -1,0 +1,129 @@
+.history {
+  min-height: calc(100vh - 75px);
+
+  padding: 80px 8%;
+
+  background: #f7f8fc;
+}
+
+.header {
+  max-width: 700px;
+}
+
+.header > span {
+  color: #6c5ce7;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.header h1 {
+  margin: 20px 0;
+
+  color: #17172a;
+
+  font-size: 58px;
+  line-height: 1.05;
+}
+
+.header h1 strong {
+  color: #6c5ce7;
+}
+
+.header p {
+  color: #777;
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+
+/* Chapters */
+
+.chapters {
+  max-width: 1100px;
+
+  margin: 60px auto 0;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 25px;
+}
+
+.chapter-card {
+  min-height: 350px;
+
+  padding: 32px;
+
+  background: white;
+
+  border: 1px solid #eeeeee;
+  border-radius: 22px;
+
+  color: #17172a;
+  text-decoration: none;
+
+  display: flex;
+  flex-direction: column;
+
+  transition: 0.3s;
+}
+
+.chapter-card:hover {
+  transform: translateY(-8px);
+
+  border-color: #dcd8ff;
+
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+}
+
+.chapter-number {
+  color: #aaa;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.chapter-icon {
+  font-size: 45px;
+
+  margin: 45px 0 20px;
+}
+
+.chapter-card h2 {
+  font-size: 29px;
+
+  margin: 0 0 10px;
+}
+
+.chapter-card p {
+  color: #777;
+
+  line-height: 1.7;
+}
+
+.card-link {
+  margin-top: auto;
+
+  color: #6c5ce7;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+
+  .chapters {
+    grid-template-columns: 1fr;
+  }
+
+  .header h1 {
+    font-size: 43px;
+  }
+}

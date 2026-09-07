@@ -1,0 +1,166 @@
+.discover {
+  min-height: calc(100vh - 75px);
+
+  padding: 80px 8%;
+
+  background: #11111d;
+  color: white;
+}
+
+.hero {
+  max-width: 1100px;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 50px;
+}
+
+.eyebrow {
+  color: #a99fff;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  margin: 18px 0;
+
+  font-size: 60px;
+  line-height: 1.05;
+}
+
+.hero h1 span {
+  color: #a99fff;
+}
+
+.hero p {
+  max-width: 550px;
+
+  color: #aaaaba;
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.hero-symbol {
+  width: 140px;
+  height: 140px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #303040;
+  border-radius: 50%;
+
+  color: #a99fff;
+
+  font-size: 45px;
+}
+
+
+/* Cards */
+
+.categories {
+  max-width: 1100px;
+
+  margin: 70px auto 0;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 25px;
+}
+
+.category-card {
+  min-height: 330px;
+
+  padding: 32px;
+
+  border: 1px solid #303040;
+  border-radius: 22px;
+
+  background: #191925;
+
+  color: white;
+  text-decoration: none;
+
+  transition: 0.3s;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+
+  background: #202030;
+
+  border-color: #6c5ce7;
+}
+
+.category-top {
+  display: flex;
+  justify-content: space-between;
+
+  color: #77778a;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.category-icon {
+  font-size: 45px;
+
+  margin-top: 45px;
+}
+
+.category-card h2 {
+  margin: 15px 0 8px;
+
+  font-size: 30px;
+}
+
+.category-card p {
+  color: #aaaaba;
+
+  line-height: 1.7;
+
+  max-width: 450px;
+}
+
+.category-card strong {
+  margin-top: auto;
+
+  font-size: 14px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 700px) {
+
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+  }
+
+  .hero-symbol {
+    display: none;
+  }
+
+  .categories {
+    grid-template-columns: 1fr;
+  }
+}

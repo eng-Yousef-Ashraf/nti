@@ -1,0 +1,68 @@
+.about {
+  padding: 90px 8%;
+  min-height: 80vh;
+  background: #ffffff;
+}
+
+.about-intro {
+  max-width: 800px;
+}
+
+.about-intro span {
+  color: #6c5ce7;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.about-intro h1 {
+  font-size: 52px;
+  line-height: 1.15;
+  color: #17172a;
+  margin: 20px 0;
+}
+
+.about-intro p {
+  color: #777;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-top: 80px;
+}
+
+.story h2 {
+  font-size: 28px;
+}
+
+.story p {
+  color: #666;
+  line-height: 1.8;
+  margin: 20px 0;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.stat {
+  padding: 25px;
+  border-radius: 15px;
+  background: #f7f7fb;
+}
+
+.stat strong {
+  display: block;
+  font-size: 35px;
+  color: #6c5ce7;
+}
+
+.stat span {
+  color: #777;
+}
