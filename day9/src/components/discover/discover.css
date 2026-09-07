@@ -1,0 +1,80 @@
+.discover {
+  padding: 80px 8%;
+  background: #11111d;
+  min-height: 80vh;
+  color: white;
+}
+
+.heading {
+  max-width: 650px;
+  margin-bottom: 50px;
+}
+
+.heading span {
+  color: #a99fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.heading h1 {
+  font-size: 48px;
+  margin: 15px 0;
+}
+
+.heading p {
+  color: #aaaaba;
+  line-height: 1.7;
+}
+
+.places {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.place-card {
+  min-height: 300px;
+  padding: 30px;
+  border: 1px solid #2c2c3c;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.3s;
+}
+
+.place-card:hover {
+  background: #1c1c2b;
+  transform: translateY(-6px);
+}
+
+.place-number {
+  font-size: 14px;
+  color: #77778a;
+}
+
+.place-content span {
+  font-size: 11px;
+  color: #a99fff;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.place-content h2 {
+  font-size: 25px;
+  margin: 10px 0;
+}
+
+.place-content p {
+  color: #aaaaba;
+  line-height: 1.6;
+}
+
+.place-content a {
+  display: inline-block;
+  margin-top: 15px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
